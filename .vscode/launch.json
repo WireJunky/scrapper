@@ -5,15 +5,12 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "(Windows) Launch",
-            "type": "cppvsdbg",
+            "name": "(lldb) Launch",
+            "type": "lldb",
             "request": "launch",
-            "program": "${workspaceRoot}/target/debug/RustLearning.exe",
+            "program": "${workspaceRoot}/target/debug/rust_learning.exe",
             "args": [],
-            "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
-            "environment": [],
-            "externalConsole": true
         }
     ]
 }
