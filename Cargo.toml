@@ -1,5 +1,5 @@
 [package]
-name = "rust_learning"
+name = "scrapper"
 version = "0.1.0"
 authors = ["WireJunky <antonie.coetzee@gmail.com>"]
 edition = "2018"

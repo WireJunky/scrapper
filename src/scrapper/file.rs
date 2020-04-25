@@ -14,9 +14,11 @@ async fn create_data_dir_if_not_exists() -> Result<PathBuf, std::io::Error> {
         Ok(_) => Ok(body_path.to_path_buf()),
         Err(e) => {
             if e.kind() == ErrorKind::NotFound {
-                fs::create_dir(body_path).await?
-            }
-            Err(e)
+                fs::create_dir(body_path).await?;
+                Ok(body_path.to_path_buf())                
+            }else{
+                Err(e)
+            }         
         }
     }
 }

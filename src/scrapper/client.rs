@@ -25,10 +25,11 @@ async fn get(url_gen: impl Fn() -> String) -> Result<String, Box<dyn std::error:
 }
 
 pub async fn page_loop(
-    url_gen: fn(i32) -> Option<String>,
+    start_index:i32,
+    url_gen: impl Fn(i32) -> Option<String>,
     html_processor: Box<dyn ProcessHtmlString>,
 ) -> Result<(), Box<dyn std::error::Error>> {
-    let mut index = 0;
+    let mut index = start_index;
     loop {
         if let Some(next_url) = url_gen(index) {
             let resp_text = get(|| next_url.clone()).await?;
